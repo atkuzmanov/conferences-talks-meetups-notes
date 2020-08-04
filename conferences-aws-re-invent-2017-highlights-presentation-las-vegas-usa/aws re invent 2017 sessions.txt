@@ -1,0 +1,1576 @@
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+---
+AWS re invent 2017 Trends
+---
+
+
+AWS Aurora
+
+AWS Rekognition
+
+AWS Kenesis
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+CON202 - Getting Started with Docker and Amazon ECS
+
+By packaging software into standardized units, Docker gives code everything it needs to run, ensuring consistency from your laptop all the way into production. But once you have your code ready to ship, how do you run and scale it in the cloud? In this session, you become comfortable running containerized services in production using Amazon EC2 Container Service. We cover container deployment, cluster management, service auto-scaling, service discovery, secrets management, logging, monitoring, security, and other core concepts. We also cover integrated AWS services and supplementary services that you can take advantage of to run and scale container-based services in the cloud.
+
+
+Nathan Peck - Developer Advocate, EC2 Container Service, Amazon
+Jean Dominguez - CA, Realtor.com
+Additional Information
+Session Room Venue:Aria
+Session Type:Breakout Session
+Session Level:Introductory (200 level)
+
+
+
+---
+
+
+Runtime engine
+
+Depenencies
+
+Code
+--------------
+Docker
+
+
+---
+
+1 image across all environments
+
+---
+
+
+reduce build times
+
+----
+
+keep dependencies the same across all
+
+diff machines diff configs - bad
+
+---
+
+VM vs Docker
+
+VM - overhead
+
+---
+
+Multi apps  with diff dependencies at the same time
+
+
+---
+
+
+ECS - api for managing containers
+
+ECS - managing repeating tasks or batch jobs
+
+---
+
+Sum up good for:
+
+Long running applications
+
+one time jobs
+
+multiple shcedulers
+
+-
+
+Works well with:
+
+ELB
+VPS
+EBS
+CloudWatch
+IAM
+CloudTrail
+
+
+---
+
+Designed for massive scale - fullly managed control plane
+
+---
+
+Realtor.com
+
+
+Initially begun with a Bakery - attempt of immutable architecture.
+
+
+AMI - artefact for lifetime of application
+
+Can't run AMI on your desktop/laptop
+
+
+---
+
+
+AWS ECS vs Docker vs Kubernetes
+
+---
+
+
+aws elastic beanstalk - no - bad performance
+
+->
+
+cloudformation
+
+
+---
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+DAT202 - Getting Started with Amazon Aurora
+
+Amazon Aurora services are MySQL and PostgreSQL -compatible relational database engines with the speed, reliability, and availability of high-end commercial databases at one-tenth the cost. This session introduces you to Amazon Aurora, explores the capabilities and features of Aurora, explains common use cases, and helps you get started with Aurora.
+
+
+Debanjan Saha - GM, Aurora, MariaDB, MySQL
+Brandon O'Brien - Principal Software Engineer, Expedia, Inc
+Gurmit Ghatore - Principal Database Engineer, Expedia
+Additional Information
+Session Room Venue:Venetian
+Session Type:Breakout Session
+Track:Databases
+Session Level:Introductory (200 level)
+
+---
+
+Managed databased service
+
+---
+
+Scale out and distributed design
+
+Service oriented arch
+
+---
+
+Integrated with:
+
+
+Lambda
+S3
+IAM
+CloudWatch
+
+
+---
+
+
+Automate administrative tasks
+
+Monitoring
+Failover
+backup
+scaling
+security
+
+so can concentrate on query optimisation for example
+
+
+---
+
+
+
+loads of industry users
+
+
+---
+
+Customers using mysql engines moving
+
+->
+
+Better availability and performance 
+
+also
+
+migrating from commercial databases
+
+-> 
+
+much cheaper
+very well integrated in cloud
+
+comparable performance and availablity
+
+migration toools to help
+
+
+-> example - DNA analysis
+
+
+Cassandra > 100 nodes --> Aurora ~10 clusters --> ~10ms latency
+
+-> example 2 Media company
+
+Redis (needed backups = $$$) --> Aurora
+
+-> finance
+
+S3 + Lambda + Redshift --> Aurora
+
+
+---
++++
+
+Aurora is fast 5x faster than mysql
+
+
+Aurora scales very well with number of connections etc.
+
+Scales well with growth of metadate or number of tables
+
+Scales well with db size
+
+
+Parallelises lock management.
+---
+
+
+Hash joins - coming soon
+ 
+parallel query - comming soon
+
+
+---
+
+
+Availability
+
+
+Quorum based system for stability.
+
+Good database failover time .
+
+cross region replicas
+
+zero down time db patching --- works 94% - doesnt work well with ssl connections - wip
+
+undelete - db backtrack - move it back in time
+
+---
+
+Security and monitoring
+
+encryption at rest
+
+encryption in transit
+
+
+advanced logging and auditing without performance impact
+
+db activity monitoring
+
+---
+
+PostgreSQL - performance insights - comming soon to MySQL - analysing query performance etc.
+
+Storage management
+
+- auto incremented 10GB units up to 64TB - no need to overprovision in beginning - saving $$$
+
+- fast db cloning - for testing etc.
+
+---
+
+Migration
+
+Oracle --> db migration service & schema conversion
+
+---
+
+
+Aurora saves $$$ - 1/10th of the cost of commercial db.
+
+
+---
+
+Expedia use case experience
+
+/*------------------------------------------------------------------------------------------------*/
+
+MCL319 - Capturing Voice Input in a Browser and Sending it to Amazon Lex
+
+In this chalk talk, we demonstrate how to build a simple web application that uses the AWS SDK for JavaScript. The example application (accessible from a browser) records audio, sends it to Amazon Lex, and plays the response. We show how to use browser APIs and JavaScript to request access to a microphone, record audio, downsample the audio, and PCM encode the audio as a WAV file. We also show how to implement silence detection and audio visualization—essential to building a user friendly audio control. Please be familiar with AWS JavaSript SDK, Amazon Lex PostContent API, Web Audio API, getUserMedia, and Amazon Lex Runtime Service.
+
+
+Andrew Lafranchise - Sr. Software Development Eng, AWS
+Harshal Pimpalkhute - Product Manager, Amazon Web Services
+Additional Information
+Session Room Venue:Venetian
+Session Type:Chalk Talk
+Track:Machine Learning
+Session Level:Advanced (300 level)
+
+---
+
+Using voice to fill in slots on a website.
+
+
+Access the microphone
+- get a stream of data
+
+important to do browser/feature detection
+- if feature there ok - not - fail gracefully
+
+Recording (scriptprocessor Node)
+- uses a buffer from the data stream
+
+Preparing to export
+- everything we have to do to the audio in order to send it to LEX
+- Chrome or Firefox on Mac - basic CD sampling rate - need to convert to LEX appropriate
+- encode it to wav and return as a blob
+
+Sending the audio to Amazon LEX PostContent API
+- vreate obj with credentials
+- content type and accept params
+
+Play the audio response
+- audio/mpeg
+- audio blob
+- audio tag event listener
+
+Bonus features
+- Analyser nodes
+- Implementing silence detection
+- Visualization
+
+Demo
+- Driving a robot IOT around with voice
+- Once audio is sent to LEx you can wire it into anything
+
+https://github.com/awslabs/aws-lex-browser-audio-capture
+
+
+Will have to play with parameters when tuning silance detection etc in a noisy environment.
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+ARC209 - A Day in the Life of a Netflix Engineer III
+
+Netflix is a large, ever changing ecosystem system serving millions of customers across the globe through cloud-based systems and a globally distributed CDN. This entertaining romp through the tech stack serves as an introduction to how we think about and design systems, the Netflix approach to operational challenges, and how other organizations can apply our thought processes and technologies. In this session, we discuss the technologies used to run a global streaming company, scaling at scale, billions of metrics, benefits of chaos in production, and how culture affects your velocity and uptime.
+
+
+Dave Hahn - Sr SRE, Netflix
+Additional Information
+Session Room Venue:Venetian
+Session Type:Breakout Session
+Session Level:Introductory (200 level)
+
+
+---
+
+
+1,000,000,000s - billions of events & metrics from logging, from customers, from cdn etc.
+
+10,000,000 of devices
+
+1,000,000 requests per seconds
+
+100,000 ec2 instances
+
+10,000s
+
+1,000s code changes
+
+100s of micro services
+
+10s of TBits of video accross the networ
+
+1 goal - ??? - more addam sandler movies?! hahahhah
+Our goal is - Winning moments of truth - whenever people chose Netflix over reading a book or going out in the sun.
+
+
+---
+
+
+localising content in language & culture - use language & culture specialists - phrases etc
+
+
+---
+
+Architecture 
+
+
+CDN - installed caching devices directly in ISPs - all video bits
+
+all else - AWS - user logic etc.
+
+Global services model
+- any customer
+- anywhere in the world
+- from any region
+
+Tidus - containers - fine grain control of resources
+- Docker
+- Apache
+
+Fenzo
+- scheduling system for Tidus - batching 
+
+
+---
+
+Networking outside of the cloud
+
+Small Map of the internet -> heat map - get data from device usage and experience
+
+Magic Modem - simulates data from customers for software engineers so they can try to fix it.
+- additional 40 req to make UI better will affect other customers badly
+
+
+---
+
+Networking inside the cloud
+
+Cloud network engineering teams
+
+Dredge - deeper understanding of applications and where their edges are
+
+
+---
+
+Traffic
+
+Traffic to AWS patterns
+
+Capacity planning - daily + redirect - different between regions -> blue capacity is planned so if one reagon fails it can be spilled over
+
+Nimble - looks at managing dark capacity - has ready ec2s
+
+
+Chaos - pull lever - get all customers out of a single region in 6 minutes.
+- team that specialises in chaos engineering - make sure the distributed system can handle turbolence
+- Chaos Monkey
+- FIT - Failure Injection Framework
+- CHAP - chaos automation platform
+- result - all those outages which never happened
+
+
+---
+
+
+Media Encoding
+
+Source Media -> Media Pipeline -> Encoded Files
+
+Video Source -> Chunk encode -> Chunk validate -> Assemble -> Validate
+
+over 70 bits of software
+
+
+Reserved instances but not used - when not used - they get used for encoding - internal spot market vs static encoding farm - 92% of savings.
+
+
+---
+
+Security on the cloud
+
+AWS IAM over 25,000 diff things you can tweak - so now soft engins need to be sec engineers?!
+
+Security team - created custom tools
+
+Aadvark - pulls permision data
+
+REPOKID - checks which priveliges are being used which are not
+
+---
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+Keynote Andy Jassy 2017-11-29
+
+
+
+EKS (NEW!) - Elastic Kubernetes Containers System (NEW!)
+
+vs
+
+ECS - Elastic Containers Systems
+
+
+AWS Fargate (NEW!) - run containers on EKS or ECS without managint servers (NEW!)
+
+
+---
+
+
+AWS Aurora Multi Master (NEW!) - scale out for both reads and rights (NEW!)
+- 2018 - multi region multi master
+
+AWS Aurora Serverless (NEW!) - on demand autoscaling serverless Aurora (NEW!)
+
+
+---
+
+Dynamo DB Global Tables (NEW!) - fully managed multi master multi region db (NEW!)
+
+Dynamo DB Backup & Restore (NEW!) - on demand continuous backups; point and time restores up to the second for last 30 days;
+
+---
+
+AWS Neptune (NEW!) - fully managed graph database (NEW!)
+
+
+---
+
+
+Goldman Sachs - Bring Your Own Key security; data lake;
+
+
+---
+
+
+S3 Select (NEW!) - only pull out the data you need (NEW!); improves perfromance; reduces cost;
+
+---
+
+Glacier Select (NEW!) - run queries directly on glacier archives (NEW!); pull just data you need; Your data lake capabilities just got broader = S3 + Glacier
+
+---
+
+AWS Sagemaker (NEW!) - machine learning;
+
+
+---
+
+AWS DeepLens (NEW!) - wireless deep learning camera;
+
+
+---
+
+AWS Rekognition - recognise inappropriate content; celebrities; faces of missing people;
+
+
+AWS Rekognition Video (NEW!) - image recognition in video; person tracking - in the shot, but blocked from the camera, know whether they are still in the frame or not;
+
+
+---
+
+AWS Transcribe (NEW!) - automatic speech recognition;
+- English & Spanish start
+
+---
+
+AWS Comprehend (NEW!) - fully managed natural language processing service
+
+
+---
+
+AWS IOT 1 click (NEW!) - 1 click creation for iot devices with lambda;
+
+
+AWS IOT Device management (NEW!) - manages iot devices at scale;
+
+
+AWS IOT Device defender (NEW!) - security for fleets of iot devices;
+
+AWS IOT Analytics (NEW!)
+
+AWS FreeRTOS (NEW!) - OS for iot devices
+
+---
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+INV4663740
+
+https://www.portal.reinvent.awsevents.com/portal/myAccount.ww
+atanas.kuzmanov@bbc.co.uk
+kuzmaa01
+Cambbc_01awsreinvent
+
+Event Information
+AWS re:Invent 2017
+Locations: ARIA, Encore, MGM, Mirage, The LINQ, The Venetian
+Las Vegas, NV
+11/27 – 12/1
+Contact Us
+awsreinvent-support@amazon.com
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+Current Filters:
+
+* Session type:
+
+BREAKOUT SESSION 
+
+
+* Industry focus:
+
+MEDIA & ENTERTAINMENT
+
+
+* Session track:
+
+ALEXA 
+ARTIFICIAL INTELLIGENCE & MACHINE LEARNING
+COMPUTE
+
+
+
+
+AUTOMOTIVE & MANUFACTURING 
+HEALTHCARE 
+LIFE SCIENCES
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+Potentials:
+
+
+ABD218 - How EuroLeague Basketball Uses IoT Analytics to Engage Fans
+
+IoT and big data have made their way out of industrial applications, general automation, and consumer goods, and are now a valuable tool for improving consumer engagement across a number of industries, including media, entertainment, and sports. The low cost and ease of implementation of AWS analytics services and AWS IoT have allowed AGT, a leader in IoT, to develop their IoTA analytics platform. Using IoTA, AGT brought a tailored solution to EuroLeague Basketball for real-time content production and fan engagement during the 2017-18 season. In this session, we take a deep dive into how this solution is architected for secure, scalable, and highly performant data collection from athletes, coaches, and fans. We also talk about how the data is transformed into insights and integrated into a content generation pipeline. Lastly, we demonstrate how this solution can be easily adapted for other industries and applications.
+
+
+Lasse Lehmann - Director Software Development, AGT International
+Marc Teichtahl - Manager, Solutions Architecture, Amazon Web Services
+Additional Information
+Venue:the Aria
+Session Type:Breakout Session
+Track:Analytics & Big Data
+Session Level:Introductory (200 level)
+
+---
+
+
+ARC206 - Disney’s Magic: A Cloud Transformation Strategy in Play
+
+Creating a comprehensive, accelerated cloud strategy for a complex or federated organization requires a disciplined approach—one that balances the need for centralized governance with the opportunity to innovate across all engineering segments within the enterprise. In this session, will follow the Walt Disney Company’s journey to create an initial cloud value hypothesis and cloud business case, and then develop a structured approach towards cloud migrations and a "cloud-first" operating model. Attendees learn more about the key implications, risks, and considerations of the company’s cloud transformation program; see examples of reference architectures and implementation guides; and understand the required activities that contributed to the success of the program. The patterns presented are broadly applicable to complex organizations with global aspirations to make the journey to AWS Cloud.
+
+Session sponsored by Accenture
+
+
+Miha Kraj - Technology Strategy Executive
+Alexi Varanko - VP Cloud Automation and Systems Engineering
+Additional Information
+Venue:the Venetian
+Session Type:Breakout Session
+Track:Architecture
+Session Level:Introductory (200 level)
+
+---
+
+
+DAT308 - Codex: Conditional Modules Strike Back
+
+Netflix runs hundreds of multivariate A/B tests a year, many of which help personalize the experience in the UI. This causes an exponential growth in the number of user experiences served to members, with each unique experience resulting in a unique JS/CSS bundle. Pre-publishing millions of permutations to the CDN for each build of each UI simply does not work at Netflix scale. In this session, we discuss how we built, designed, and scaled a brand new Node.js service, Codex. Its sole responsibility is to build personalized JS/CSS bundles on the fly for members as they move through the Netflix user experience. We’ve learned a ton about building a horizontally scalable Node.js microservice using core AWS services. Codex depends on Amazon S3 and Amazon DynamoDB to meet the streaming needs of our 100 million customers.
+
+
+Alex Liu - Senior Software Engineer, Netflix
+Additional Information
+Venue:the Venetian
+Session Type:Breakout Session
+Track:Databases
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+---
+
+MAE302 - Personalizing PBS National Channels by Shifting to Local Ads and Time Zones Automatically
+
+As a national broadcaster, PBS must present the news at 7PM across multiple time zones while offering their local affiliates options for customizing the ad payloads. By using AWS Elemental Cloud, Amazon S3, Amazon EC2, AWS Direct Connect, and other services, PBS is able to improve the user and operator experience while monetizing video content with server-side ad insertion and time-shifting of their broadcasts. Hear how PBS uses their own solutions and AWS products and services to enhance their national content distribution capabilities.
+
+
+Renard Jenkins - Vice President Operations: Production, Media & Distribution, PBS
+Lionel Bringuier - Director of Product Management - Video Delivery, AWS Elemental
+Additional Information
+Venue:the Venetian
+Session Type:Breakout Session
+Track:Media & Entertainment
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+---
+
+SRV310 - Designing Microservices with Serverless
+
+When designing microservices there are a number of things to think about. Just for starters, the bounds of their functionality, how they communicate with their dependencies, and how they provide an interface for their own consumers. Serverless technologies such as AWS Lambda change paradigms around code structure, usage of libraries, and how you deploy and manage your applications. In this session, we show you how by combining microservices and serverless technologies, you can achieve the ultimate flexibility and agility that microservices aim for, while providing business value in how serverless greatly reduces operational overhead and cost.
+
+In addition, National Geographic will share how it built its NG1 platform using a serverless, microservices architecture. The NG1 platform provides National Geographic consumers with content personalized to their preferences and behaviors in an intuitive, easy-to-use way on smartphones. 
+
+
+Marcus East - Chief Technology Officer & EVP, National Geographic
+David Nasi - Senior Product Manager-Tech, AWS
+Additional Information
+Venue:the Aria
+Session Type:Breakout Session
+Track:Serverless
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+
+---
+
+ABD206 - Building Visualizations and Dashboards with Amazon QuickSight
+
+Just as a picture is worth a thousand words, a visual is worth a thousand data points.  A key aspect of our ability to gain insights from our data is to look for patterns, and these patterns are often not evident when we simply look at data in tables. The right visualization will help you gain a deeper understanding in a much quicker timeframe.  In this session, we will show you how to quickly and easily visualize your data using Amazon QuickSight.  We will show you how you can connect to data sources, generate custom metrics and calculations, create comprehensive business dashboards with various chart types, and setup filters and drill downs to slice and dice the data.
+
+
+Luis Wang - Principal Product Manager
+Additional Information
+Venue:the Aria
+Session Type:Breakout Session
+Track:Analytics & Big Data
+Session Level:Introductory (200 level)
+Please note that session information is subject to change.
+
+
+---
+
+
+ALX325 - Now Hear This: How Earplay Architects an Alexa Radio Drama
+
+With Earplay, you can enjoy audio stories you play with your voice, featuring voice acting and sound effects, like in a radio drama. In this session, join Dave Grossman, CCO of Earplay, and Cami Williams, Alexa evangelist, as they discuss the technical and design challenges that the Earplay team overcame when they built their Alexa experience. Leave this session with an understanding of how to use the Alexa Service, AWS Lambda, Amazon DynamoDB, SSML, and testing tools to deliver similar experiences to your customers.
+
+
+Dave Grossman - CCO, Earplay
+Camryn Williams - Alexa Evangelist
+Additional Information
+Venue:the Aria
+Session Type:Breakout Session
+Track:Alexa
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+
+---
+
+
+
+ALX326 - Building Natural Language Dialogs with Alexa
+
+In this session, we cover using Alexa's dialog management, entity resolution, and slot elicitation capabilities as well as how to process the results through a microservice with AWS Lambda. Leave this session with a complete picture of all the tools and techniques required to build complex, production-quality Alexa skills.
+
+
+Bob Stolzberg - Founder & Chief Innovation Officer, VoiceXP
+Bob Serr - Director of Alexa Skills Tech, Amazon
+Additional Information
+Venue:the Aria
+Session Type:Breakout Session
+Track:Alexa
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+
+---
+
+
+MCL301 - Building a Voice-Enabled Customer Service Chatbot Using Amazon Lex and Amazon Polly
+
+Amazon Lex is a service for building conversational interfaces into any application using voice and text, and Amazon Polly is a service that turns text into lifelike speech. This session combines both of these AWS services during which the presenter will demonstrate how to build a Help Desk chatbot that feature spoken-voice interfaces. Attendees will be provided with the foundational skills for those looking to enrich their applications with natural, conversational interfaces.  Liberty Mutual Insurance will also present on their chat platform architecture to demonstrated how they areusing Amazon Lex in their organization as an employee digital assistant.
+
+
+Gillian McCann - Architect, Liberty Mutual
+Gillian Armstrong - Technologist, Liberty Mutual
+Hira Niranjan - Solutions Architect
+Additional Information
+Venue:the Aria
+Session Type:Breakout Session
+Track:Artificial Intelligence & Machine Learning
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+
+---
+
+
+MCL312 - Building Multichannel Conversational Interfaces Using Amazon Lex
+
+In this session, discover how to build a multichannel conversational interface that leverages a preprocessing layer in front of Amazon Lex. This preprocessing layer can enable customers to integrate their conversational interface with external services and use multiple specialized Amazon Lex chatbots as part of an overall solution. As an example of how to integrate with an external service, learn how to integrate with Skype. Watch it in action through a chatbot demonstration with interaction through Skype messaging and voice.
+
+
+Ahmad Khan - Sr. Solutions Architect, Amazon Web Services
+Additional Information
+Venue:the Venetian
+Session Type:Breakout Session
+Track:Artificial Intelligence & Machine Learning
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+---
+
+
+MCL307 - Amazon Polly Tips and Tricks: How to Bring Your Text-to-Speech Voices to Life
+
+Although there are many ways to optimize the speech generated by Amazon Polly's text-to-speech voices, you might find it challenging to apply the most effective enhancements in each situation. Learn how you can control pronunciation, intonation, timing, and emotion for text-to-speech voices. In this session, you get a comprehensive overview of the available tools and methods available for modifying Amazon Polly speech output, including SSML tags, lexicons, and punctuation. You also get recommendations for streamlining application of these techniques. Come away with insider tips on the best speech optimization techniques to provide a more natural voice experience.
+
+
+Andrew Huntwork - CEO, The Magic Door
+Remus Mois - Software Development Manager
+Rafal Kuklinski - Sr. SDM
+Additional Information
+Venue:the Venetian
+Session Type:Breakout Session
+Track:Artificial Intelligence & Machine Learning
+Session Level:Advanced (300 level)
+Please note that session information is subject to change.
+
+
+---
+
+
+CTD401 - Taking DevOps to the AWS Edge
+
+Since last year’s ‘Taking DevOps to the Edge’, and with the introduction of AWS Lambda@Edge, the tools available to apply DevOps practices to your application edge have broadened. In this updated session, we dive deep into how you can integrate Amazon CloudFront and related services into your application, be agile in developing and adapting the application, and follow best practices when configuring the services to improve security and performance, all while reducing costs. Attend this session and learn how to determine the best location (origin, edge, or client) to execute your code, avoid needless forwarding of headers and cookies, test your application when making changes, version your configuration changes, monitor usage and automate security, create templates for new distributions, configure SSL/TLS certificates, and more.
+
+
+Lee Atkinson - Solutions Architect, Amazon Web Services UK Ltd
+Additional Information
+Venue:the Venetian
+Session Type:Breakout Session
+Track:Content Delivery
+Session Level:Expert (400 level)
+Please note that session information is subject to change.
+
+
+---
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+---
+Wednesday
+
+
+
+
+
+DEV338 - Use Amazon EC2 Systems Manager to Perform Automated Resilience Testing in Your CI/CD Pipeline
+
+
+DAT334 - Amazon Aurora Performance Optimization for the MySQL-compatible Edition
+
+
+DAT402 - Deep Dive on the Amazon Aurora PostgreSQL-compatible Edition
+
+
+ALX316 - How to Build a Backend for an Alexa Smart Home Skill
+
+-
+
+CMP218 - AWS Compute: What’s New in Amazon EC2, Containers and Serverless
+
+
+
+MCL318 - Deep Dive on Amazon Rekognition Architectures for Image Analysis
+
+---
+Thursday
+
+ABD401 - How Netflix Monitors Applications in Near Real-Time with Amazon Kinesis
+
+ALX305 - Designing Far-Field Speech Processing Systems with Intel and Amazon Alexa Voice Service
+
+DAT203-R - [REPEAT] Running MySQL Databases on AWS
+
+MCL330 - Humans, Plants, and Chairs: Insights from Analyzing over 30 Million Instagram Posts with Amazon Rekognition
+
+CMP311 - Auto Scaling Prime Time: Target Tracking Hits the Bullseye at Netflix
+
+CMP309 - How Netflix Encodes at Scale
+
+SKL65-R9 - [REPEAT 9] Writing Task Definitions for Amazon ECS
+
+CTD208 - In Space, Everyone Can See NASA Stream (in 4K)
+
+MCL307 - Amazon Polly Tips and Tricks: How to Bring Your Text-to-Speech Voices to Life
+
+CTD401 - Taking DevOps Closer to the AWS Edge
+
+
+---
+Friday
+
+ARC327 - How to Determine If You Are Well Architected for Resiliency (or How I Learned to Stop Worrying and Love the Failures)
+
+
+ALX303 - The Art and Science of Conversation Applied to Alexa Skills
+
+
+DAT314 - Best Practices for Running PostgreSQL on AWS
+
+
+
+DAT301-R - [REPEAT] Deep Dive on the Amazon Aurora MySQL-compatible Edition
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+LAB
+
+DAT342 - NEW LAUNCH! How to build graph applications with SPARQL and Gremlin using Amazon Neptune
+
+In this session, we will demonstrate how you can easily start using graph databases to solve your business problems. We will demonstrate setting up a Neptune instance, loading the dataset and using Gremlin and SPARQL via Java to build a application. We will also cover scaling, availability and administrative aspects of the Neptune service.
+
+
+Michael Schmidt - Senior Software Development Engineer, Amazon
+Divij Vaidya - Software Development Engineer, Amazon Web Services
+Peter Haase - CEO, metaphacts GmbH
+Patrick Madden - CA, Tom Sawyer Software
+Additional Information
+Session Room Venue:Venetian
+Session Type:Workshop
+Track:Databases
+Session Level:Advanced (300 level)
+
+---
+
+
+Neptune - beta product
+
+No credits as only limited for beta testing
+
+
+Instance:  i-0ab29bd4a33d80d98Public 
+DNS: ec2-54-166-14-133.compute-1.amazonaws.com
+
+ec2-54-166-14-133.compute-1.amazonaws.com
+
+
+IPv4 Public IP
+54.166.14.133
+
+
+
+
+chmod 400 neptune_tutorial_key.pem
+
+
+
+
+
+
+ssh -i neptune_tutorial_key.pem -L 1234:localhost:8080 -L 2345:localhost:8081 ubuntu@ec2-54-166-14-133.compute-1.amazonaws.com
+
+
+
+ssh -i neptune_tutorial_key.pem -L 1234:localhost:8080 -L 2345:localhost:8081 ubuntu@ec2-54-166-14-133.compute-1.amazonaws.com
+
+
+
+http://localhost:2345/resource/Start
+
+Neptune
+SparqlTutorial
+
+
+
+http://localhost:1234/
+kuzma
+password
+
+
+
+http://localhost:2345/sparql#query=PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0ASELECT+*+WHERE+%7B%0A++%3Fsub+%3Fpred+%3Fobj+.%0A%7D+%0ALIMIT+10
+
+
+Apache Thinkpop
+
+Gremlin Traversal language
+
+SPARQL Query language
+
+RDF
+
+AWS Neptune
+
+
+sql O(n)
+
+
+graph O(n)
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+MCL339 - NEW LAUNCH! Amazon Rekognition Video eliminates manual cataloging of video which is expensive, error-prone, and hard to scale.
+
+During this session, we will provide an overview of Amazon Rekognition Video, a deep learning powered video analysis service that tracks people, detects activities, and recognizes objects, celebrities, and inappropriate content. Amazon Rekognition Video can detect and recognize faces in live streams. Rekognition Video also analyzes existing video stored in Amazon S3 and returns specific labels of activities, people and faces, and objects with time stamps so you can easily locate the scene. For people and faces, it also returns the bounding box, which is the specific location of the person or face in the frame.  We will also cover different use cases for Amazon Rekognition Video in applications such as security and public safety, and media and entertainment.
+
+
+ranju das - Director - Amazon Rekognition
+Additional Information
+Session Room Venue:Venetian
+Session Type:Breakout Session
+Session Level:Advanced (300 level)
+
+---
+
+
+make sense of what customers see in their content
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+GEN06 - Werner Vogels' Keynote
+
+Join us on Thursday, Nov. 30 at 8:30am to watch CTO Werner Vogels discuss the latest AWS news and announcements. Werner's keynote will take place at the MGM Grand Garden Arena.
+
+---
+
+Security
+
+
+---
+
+Cloud9 serverless
+- remote pair programming
+
+---
+
+Chaos engineering
+
+---
+
+Containers
+
+---
+
+Lambdas
+- loads of new features
+
+---
+
+AI in sports; sensors; iot; story telling;
+- HEED platform
+
+
+---
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+MCL212-R - SESSION FULL! [REPEAT] NEW LAUNCH! AWS DeepLens workshop: Building Computer Vision Applications
+
+In this workshop, developers have the opportunity to learn how to build and deploy computer vision models, such as face detection and object analysis using the AWS DeepLens deep learning enabled video camera. By working hands-on, developers of all skill levels can explore and build their own deep learning powered, computer-vision applications. Attendees can experiment with different sample projects for face detection, object recognition, neural style transfer, and other machine learning use cases using Apache MXNet. 
+
+Additional Information
+Session Room Venue:Venetian
+Session Type:Workshop
+Track:Machine Learning
+Session Level:Introductory (200 level)
+Please note that session information is subject to change.
+
+
+---
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+
